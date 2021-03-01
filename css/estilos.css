@@ -1,0 +1,260 @@
+.opiniones, .contacto form textarea, .contacto form, .sobreNosotros, .titulo, .section__textoindex, .section__button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #505050;
+}
+
+header {
+  text-align: center;
+}
+header .header__img {
+  position: relative;
+  right: 45%;
+  left: 44%;
+  width: 12%;
+  height: 12%;
+  margin: 20px 0px 20px 0px;
+  display: block;
+}
+
+.index__img {
+  width: 100%;
+  height: 100%;
+}
+
+.section__button {
+  width: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  font-size: large;
+}
+
+.section__textoindex {
+  display: flex;
+  justify-content: space-around;
+  margin: 3%;
+  font-size: medium;
+}
+.section__textoindex .section__textoindex__texto {
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+/* SOBRE NOSOTROS */
+.titulo {
+  text-align: center;
+  padding: 10px;
+}
+
+.sobreNosotros {
+  display: flex;
+  align-items: center;
+}
+.sobreNosotros .sobreNosotrosImagen {
+  width: 40%;
+  height: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.sobreNosotros .sobreNosotros p {
+  font-size: large;
+  padding: 20px;
+}
+
+/* PRODUCTOS */
+.productos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  text-align: center;
+}
+.productos .productosimagenesA {
+  width: 300px;
+  height: 300px;
+  padding: 20px 10px;
+}
+.productos .productosimagenesB {
+  width: 300px;
+  height: 300px;
+  padding: 20px 10px;
+}
+
+/* CONTACTO */
+.contacto {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.contacto .contactoimagenes {
+  width: 40%;
+  height: 40%;
+}
+.contacto form {
+  font-size: small;
+  margin-right: 10%;
+}
+.contacto form .text {
+  display: block;
+  padding: 2% 25%;
+  margin: 1% 0 1% 0;
+  border: none;
+  border-bottom: 2px solid #505050;
+}
+.contacto form textarea {
+  display: block;
+  margin: 3% 0 3% 0;
+  border: none;
+  border-bottom: 2px solid #505050;
+}
+.contacto form .submit {
+  color: white;
+  background-color: tomato;
+  border: none;
+  padding: 15px;
+}
+.contacto form .submit .submit:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+/* OPINIONES */
+.opinionesfondo {
+  background-image: url("opinionesfondo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.opiniones {
+  font-size: large;
+  height: 75vh;
+  padding: 2%;
+  margin: 0 10% 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 5%;
+  row-gap: 5%;
+  grid-template-areas: "Romi Marcos" "Romi Caro";
+  align-items: center;
+}
+.opiniones .opiniones__romi {
+  grid-area: Romi;
+}
+.opiniones .opiniones__romi .opiniones__romi__nombre {
+  font-style: italic;
+  font-weight: 650;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2%;
+}
+.opiniones .opiniones__marcos {
+  grid-area: Marcos;
+}
+.opiniones .opiniones__marcos .opiniones__marcos__nombre {
+  font-style: italic;
+  font-weight: 650;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2%;
+}
+.opiniones .opiniones__caro {
+  grid-area: Caro;
+}
+.opiniones .opiniones__caro .opiniones__caro__nombre {
+  font-style: italic;
+  font-weight: 650;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2%;
+}
+.opiniones .opiniones p {
+  align-content: center;
+}
+
+/* FOOTER */
+.footer__icon {
+  width: 30px;
+  height: 30px;
+  margin: 20px;
+}
+
+/* MEDIA QUERIES - TABLET */
+@media screen and (max-width: 768px) {
+  .section__textoindex__img {
+    display: none;
+  }
+
+  .sobreNosotros {
+    display: flex;
+    flex-direction: column;
+  }
+  .sobreNosotros .sobreNosotrosImagen {
+    margin: unset;
+  }
+
+  .contacto {
+    display: flex;
+    flex-direction: column;
+  }
+  .contacto .contactoimagenes {
+    margin-bottom: 3%;
+  }
+
+  form {
+    margin-right: unset;
+  }
+
+  .opiniones {
+    grid: unset;
+    display: block;
+    height: unset;
+  }
+
+  .opinionesfondo {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+/* MEDIA QUERIES - SMARTPHONE */
+@media screen and (max-width: 480px) {
+  .section__textoindex__img {
+    display: none;
+  }
+
+  .textoindex {
+    display: block;
+    text-align: center;
+    margin: 2%;
+  }
+  .textoindex .textoindex p {
+    padding: 2%;
+  }
+
+  .sobreNosotrosImagen {
+    height: 60%;
+    width: 60%;
+  }
+
+  .sobreNosotros article {
+    text-align: center;
+  }
+
+  .contactoimagenes {
+    height: 70%;
+    width: 70%;
+    margin-bottom: 3%;
+  }
+
+  .opiniones div {
+    text-align: center;
+    padding: 3%;
+  }
+
+  .opinionesfondo {
+    background-size: 400%;
+  }
+}

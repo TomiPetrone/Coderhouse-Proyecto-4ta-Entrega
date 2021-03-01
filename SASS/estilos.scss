@@ -1,0 +1,307 @@
+$display:flex;
+$margin: 10px+10px;
+$padding: 2%;
+
+%extend {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #505050;
+}
+
+@mixin section ($fontsize) {
+    font-size: $fontsize;
+}
+
+header {
+    text-align: center;
+
+
+    .header__img {
+        position: relative;
+        right: 45%; left: 44%;
+        width: 12%; height: 12%;
+        margin: $margin 0px $margin 0px;
+        display: block;
+    }
+
+}
+
+.index__img {
+    width: 100%; height: 100%;
+}
+
+.section__button {
+    width: 100%;
+    background-repeat: no-repeat;
+    display: $display;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: $padding;
+    padding-top: $padding;
+    @include section (large);
+    @extend %extend;
+}
+
+.section__textoindex {
+    display: $display;
+    justify-content: space-around;
+    margin: 3%;
+    @include section (medium);
+    @extend %extend;
+    
+    .section__textoindex__texto {
+        padding-right: $padding;
+        padding-left: $padding;
+    }
+}
+
+/* SOBRE NOSOTROS */
+
+.titulo {
+    @extend %extend;
+    text-align: center;
+    padding: 10px;
+}
+
+.sobreNosotros {
+    @extend %extend;
+    display: $display;
+    align-items: center;
+
+    .sobreNosotrosImagen {
+        width: 40%; height: 40%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .sobreNosotros p {
+        font-size: large;
+        padding: 20px;
+    }
+
+}
+
+/* PRODUCTOS */
+
+.productos {
+    display: $display;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    text-align: center;
+
+    .productosimagenesA {
+        width: 300px; height: 300px;
+        padding: 20px 10px;
+    }
+    .productosimagenesB {
+        width: 300px; height: 300px;
+        padding: 20px 10px;
+    }
+}
+
+/* CONTACTO */
+
+.contacto {
+    display: $display;
+    justify-content: space-around;
+    align-items: center;
+
+    .contactoimagenes {
+        width: 40%; height: 40%;
+    }
+
+    form {
+        @extend %extend;
+        font-size: small;
+        margin-right: 10%;
+
+        .text {
+            display: block;
+            padding: 2% 25%;
+            margin: 1% 0 1% 0;
+            border: none;
+            border-bottom: 2px solid #505050;
+        }
+
+        textarea {
+            display: block;
+            margin: 3% 0 3% 0;
+            border: none;
+            border-bottom: 2px solid #505050;
+            @extend %extend;
+        }
+
+        .submit {
+            color: white;
+            background-color: tomato;
+            border: none;
+            padding: 15px;
+
+
+            .submit:hover {
+                opacity: 0.85;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+/* OPINIONES */
+
+.opinionesfondo {
+    background-image: url("opinionesfondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.opiniones {
+    @extend %extend;
+    font-size: large;
+    height: 75vh;
+    padding: 2%;
+    margin: 0 10% 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 5%;
+    row-gap: 5%;
+    grid-template-areas: 
+        "Romi Marcos"
+        "Romi Caro";
+    align-items: center;
+
+
+    .opiniones__romi{
+        grid-area: Romi;
+
+        .opiniones__romi__nombre {
+            font-style: italic;
+            font-weight: 650;
+            display: $display;
+            justify-content: flex-end;
+            padding: 2%;
+        }
+    }
+
+    .opiniones__marcos{
+        grid-area: Marcos;
+
+        .opiniones__marcos__nombre {
+            font-style: italic;
+            font-weight: 650;
+            display: $display;
+            justify-content: flex-end;
+            padding: 2%;
+        }
+    }
+
+    .opiniones__caro{
+        grid-area: Caro;
+
+
+        .opiniones__caro__nombre {
+            font-style: italic;
+            font-weight: 650;
+            display: $display;
+            justify-content: flex-end;
+            padding: 2%;
+        }
+    }
+
+    .opiniones p{
+        align-content: center;
+    }
+}
+
+/* FOOTER */
+
+.footer__icon {
+    width: 20px+10px; 
+    height: 20px+10px;
+    margin: $margin;
+}
+
+/* MEDIA QUERIES - TABLET */
+
+@media screen and (max-width:768px) {
+
+    .section__textoindex__img {
+        display: none;
+    }
+
+    .sobreNosotros{
+        display: $display;
+        flex-direction: column;
+
+        .sobreNosotrosImagen{
+            margin: unset;
+        }
+    }
+
+    .contacto{
+        display: flex;
+        flex-direction: column;
+
+        .contactoimagenes{
+            margin-bottom: 3%;
+        }
+    }
+
+    form {
+        margin-right: unset;
+    }
+
+    .opiniones{
+        grid: unset;
+        display: block;
+        height:unset;
+    }
+
+    .opinionesfondo{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+}
+
+/* MEDIA QUERIES - SMARTPHONE */
+
+@media screen and (max-width:480px) {
+
+    .section__textoindex__img {
+        display: none;
+    }
+    
+    .textoindex{
+        display: block;
+        text-align: center;
+        margin: 2%;
+
+        .textoindex p{
+            padding: $padding;
+        }
+    }
+
+    .sobreNosotrosImagen{
+        height: 60%; width: 60%;
+    }
+
+    .sobreNosotros article {
+        text-align: center;
+    }
+
+    .contactoimagenes{
+        height: 70%; width: 70%;
+        margin-bottom: 3%;
+    }
+
+    .opiniones div{
+        text-align: center;
+        padding: 3%;
+    }
+
+    .opinionesfondo{
+        background-size: 400%;
+    }
+
+}
